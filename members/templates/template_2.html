@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block title %}{% endblock %}</title>
+    {% load bootstrap5 %} {% bootstrap_css %} {% bootstrap_javascript %}
+  </head>
+  <body>
+    <div class="container">
+      <ul class="nav bg-info">
+        <li class="nav-item">
+          <a class="nav-link link-light" href="">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-light" href="/members">MEMBERS</a>
+        </li>
+      </ul>
+
+      {%for x in person%}
+      <div class="card mb-3" style="max-width: 540px">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{{x.img}}" class="img-fluid rounded-start" alt="..." />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <div class="d-flex flex-column me-5">
+                <h5 class="card-title"> {{x.perfix}} {{x.fristname}} {{x.lastname}} </h5>
+                <p class="card-text">คอร์ส : {{x.couress}}</p>
+                <p class="card-text">คอร์ส : {{x.date}}</p>
+              </div>
+
+              <button type="button" class="btn btn-primary">ยืนยัน</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      {%endfor%} {% block content %} {% endblock %}
+    </div>
+  </body>
+</html>

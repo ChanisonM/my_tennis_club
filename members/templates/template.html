@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Hello {{firstname}} {{lastname}} , how are you?</h1>
+
+    {% with nickname="Mon"%}
+        <h1>Nickname {{nickname}}</h1>
+    {%endwith%}
+
+
+    <ul>
+      {% for x in mymember%}
+        <li>{{x.firstname}} {{x.lastname}}</li>
+      {%endfor%}
+    </ul>
+  </body>
+</html>
